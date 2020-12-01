@@ -1,0 +1,46 @@
+import turtle
+import random
+
+window = turtle.Screen()
+zelvica = turtle.Turtle()
+
+# n = int(input("Vnesi stevilo kotov"))
+n = 12
+notranji_kot = 360/n # 180 * (n-2)/n
+# dolzina = int(input("Vnesi dolzino stranice"))
+dolzina = 100
+                # ff00ff
+zelvica.pencolor("#000000")
+
+seznam_barv = ["green", "red", "blue", "orange", "pink", "black", "brown"]
+
+
+print(seznam_barv[3])
+
+zelvica.shape("turtle")
+
+for stranica in range(n):
+
+    izbrana_barva = seznam_barv[ random.randrange(0,7) ]
+
+    zelvica.pencolor(seznam_barv[ random.randrange(0,7) ])
+    zelvica.fillcolor(seznam_barv[ random.randrange(0,7) ])
+
+    zelvica.forward(dolzina)
+    zelvica.right(notranji_kot/2)
+    zelvica.left(90)
+    zelvica.pencolor(seznam_barv[ random.randrange(0,7) ])
+    zelvica.forward(dolzina/2)
+    zelvica.right(90)
+    zelvica.pencolor(seznam_barv[ random.randrange(0,7) ])
+    zelvica.begin_fill()
+    zelvica.circle(30)
+    zelvica.end_fill()
+    zelvica.left(90)
+    zelvica.backward(dolzina/2)
+    zelvica.right(90)
+    zelvica.right(notranji_kot/2)
+
+
+turtle.done()
+
